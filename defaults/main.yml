@@ -1,2 +1,8 @@
 ---
 # defaults file for zabbix
+
+zabbix_version: 2.4
+zabbix_agent_log_file_size: 0
+zabbix_agent_server: 127.0.0.1
+zabbix_agent_server_active: 127.0.0.1
+zabbix_agent_hostname: "{{ ansible_fqdn }}"
