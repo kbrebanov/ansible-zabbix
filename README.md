@@ -1,6 +1,8 @@
 zabbix
 ======
 
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-kbrebanov.zabbix-660198.svg)](https://galaxy.ansible.com/list#/roles/3405)
+
 Installs and configures Zabbix agent.
 
 Requirements
