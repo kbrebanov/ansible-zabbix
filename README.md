@@ -1,7 +1,7 @@
 zabbix
 ======
 
-[![Ansible Role](https://img.shields.io/ansible/role/3405.svg)](https://galaxy.ansible.com/list#/roles/3405)
+[![Build Status](https://travis-ci.org/kbrebanov/ansible-zabbix.svg?branch=master)](https://travis-ci.org/kbrebanov/ansible-zabbix)
 
 Installs and configures Zabbix agent.
 
