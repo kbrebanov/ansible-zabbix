@@ -15,7 +15,7 @@ Role Variables
 
 | Name                       | Default              | Description                                                       |
 |:---------------------------|:---------------------|:------------------------------------------------------------------|
-| zabbix_version             | 2.4                  | Version of Zabbix to install                                      |
+| zabbix_version             | 3.0                  | Version of Zabbix to install                                      |
 | zabbix_agent_log_file_size | 0                    | Maximum size of log file in MB (0-1024) 0 - disables log rotation |
 | zabbix_agent_server        | 127.0.0.1            | Zabbix server address                                             |
 | zabbix_agent_server_active | 127.0.0.1            | Zabbix server address for active checks                           |
