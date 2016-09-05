@@ -8,13 +8,13 @@ Installs and configures Zabbix agent.
 Requirements
 ------------
 
-This role requires Ansible 1.4 or higher.
+This role requires Ansible 1.9 or higher.
 
 Role Variables
 --------------
 
 | Name                       | Default              | Description                                                       |
-|----------------------------|----------------------|-------------------------------------------------------------------|
+|:---------------------------|:---------------------|:------------------------------------------------------------------|
 | zabbix_version             | 2.4                  | Version of Zabbix to install                                      |
 | zabbix_agent_log_file_size | 0                    | Maximum size of log file in MB (0-1024) 0 - disables log rotation |
 | zabbix_agent_server        | 127.0.0.1            | Zabbix server address                                             |
@@ -30,17 +30,19 @@ Example Playbook
 ----------------
 
 Install Zabbix agent
-```
+```yaml
 - hosts: all
   roles:
-    - { role: kbrebanov.zabbix }
+    - name: kbrebanov.zabbix
 ```
 
 Install Zabbix agent specifying version
-```
+```yaml
 - hosts: all
+  vars:
+    zabbix_version: 2.2
   roles:
-    - { role: kbrebanov.zabbix, zabbix_version: 2.2 }
+    - name: kbrebanov.zabbix
 ```
 
 License
