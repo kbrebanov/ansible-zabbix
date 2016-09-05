@@ -10,7 +10,7 @@
 
 - name: Create Zabbix APT repository
   apt_repository:
-    repo: 'deb http://repo.zabbix.com/zabbix/{{ zabbix_version }}/ubuntu trusty main'
+    repo: "deb http://repo.zabbix.com/zabbix/{{ zabbix_version }}/ubuntu trusty main"
     state: present
   tags:
     - zabbix
