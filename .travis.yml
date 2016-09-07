@@ -4,11 +4,15 @@ sudo: required
 language: generic
 
 env:
-  - distribution: ubuntu
-    version: 14.04
-    init: /sbin/init
-    run_opts: ""
-#  - distribution: ubuntu
+  global:
+    # https://github.com/travis-ci/travis-ci/issues/6461#issuecomment-239577307
+    DOCKER_VERSION: "1.9.1-0~trusty"
+  matrix:
+    - distribution: ubuntu
+      version: 14.04
+      init: /sbin/init
+      run_opts: ""
+#   - distribution: ubuntu
 #    version: 16.04
 #    init: /bin/systemd
 #    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
@@ -25,6 +29,12 @@ services:
   - docker
 
 before_install:
+  # Downgrade to specific version of Docker engine
+  - sudo apt-get update
+  - sudo apt-get remove docker-engine -yq
+  - sudo apt-get install docker-engine=$DOCKER_VERSION -yq --no-install-suggests --no-install-recommends --force-yes -o Dpkg::Options::="--force-confnew"
+
+  # Build container
   - docker pull ${distribution}:${version}
   - docker build --rm=true --file=tests/Dockerfile.${distribution}-${version} --tag=${distribution}-${version}:ansible tests
 
