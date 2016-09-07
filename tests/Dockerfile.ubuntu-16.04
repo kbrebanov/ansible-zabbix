@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 RUN apt-get -qq update
 
 # Install Ansible
-RUN apt-get -y install software-properties-common; \
+RUN apt-get -y install software-properties-common apt-transport-https; \
 apt-add-repository ppa:ansible/ansible; \
 apt-get -qq update; \
 apt-get -y install ansible
